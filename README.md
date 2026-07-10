@@ -1,2 +1,835 @@
-# Grace-works
-Its all about home of prayer, prayer, worship and transformation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grace Center PEFA Church | Walking in the Anointing</title>
+<meta name="description" content="Grace Center PEFA Church, Ex-Margaret, Rongai, Nakuru. Theme of the year: Walking in the Anointing — Zechariah 4:6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#3b0f5c;
+    --purple-deep:#22083a;
+    --gold:#d4af37;
+    --gold-bright:#f2c94c;
+    --flame:#c8390f;
+    --cream:#f7f1e6;
+    --ink:#1a0f26;
+    --purple-tint: rgba(59,15,92,0.06);
+    --max: 1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Barlow Condensed', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-size:19px;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    margin:0 0 .4em;
+    color:var(--purple-deep);
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Barlow Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:14px;
+    font-weight:600;
+    color:var(--flame);
+  }
+  @media(prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:999;
+    background:transparent;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:22px 0;
+  }
+  header.scrolled{
+    background:var(--purple-deep);
+    box-shadow:0 6px 24px rgba(0,0,0,.25);
+    padding:12px 0;
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:12px; color:var(--cream);}
+  .brand .mark{
+    width:38px; height:38px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold) 60%, var(--flame) 130%);
+    flex-shrink:0;
+  }
+  .brand .name{font-family:'Playfair Display',serif; font-weight:700; font-size:20px; color:#fff; line-height:1.1;}
+  .brand .name small{display:block; font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:.15em; color:var(--gold-bright); text-transform:uppercase; font-weight:600;}
+  .nav-links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    color:#efe6d8; font-size:16px; letter-spacing:.03em; font-weight:500;
+    position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--gold-bright);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; z-index:1001;}
+  .hamburger span{width:26px; height:2px; background:#fff; display:block; transition:.3s;}
+  .mobile-menu{
+    display:none; position:fixed; inset:0; background:var(--purple-deep); z-index:1000;
+    flex-direction:column; align-items:center; justify-content:center; gap:28px;
+    opacity:0; pointer-events:none; transition:opacity .3s ease;
+  }
+  .mobile-menu.open{opacity:1; pointer-events:auto; display:flex;}
+  .mobile-menu a{color:#fff; font-size:26px; font-family:'Playfair Display',serif;}
+
+  @media(max-width:820px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(200,57,15,.35), transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(212,175,55,.25), transparent 50%),
+      linear-gradient(160deg, var(--purple-deep), var(--purple) 60%, #4a1470);
+    overflow:hidden;
+    padding:140px 0 90px;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 2px, transparent 2px 40px);
+    pointer-events:none;
+  }
+  .flame-glow{
+    position:absolute; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle, rgba(242,201,76,.35), rgba(200,57,15,.12) 45%, transparent 70%);
+    top:-120px; right:-120px; filter:blur(10px);
+    animation:pulse 7s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.12); opacity:.75;} }
+  .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.3fr .9fr; gap:50px; align-items:end;}
+  .hero .eyebrow{color:var(--gold-bright);}
+  .hero h1{
+    font-size:clamp(38px, 6vw, 68px);
+    color:#fff;
+    font-weight:900;
+    line-height:1.05;
+    margin:14px 0 18px;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold-bright);
+  }
+  .verse-block{
+    border-left:3px solid var(--gold);
+    padding-left:18px;
+    color:#e9dfc9;
+    font-size:19px;
+    max-width:540px;
+    margin-bottom:26px;
+  }
+  .verse-block strong{color:#fff; font-family:'Playfair Display',serif; font-style:italic; font-weight:600;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 30px; font-weight:600; font-size:16px;
+    border-radius:2px; letter-spacing:.03em; cursor:pointer; border:none;
+    font-family:'Barlow Condensed',sans-serif; text-transform:uppercase;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg, var(--gold-bright), var(--gold)); color:var(--purple-deep); box-shadow:0 8px 24px rgba(212,175,55,.35);}
+  .btn-outline{background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5);}
+  .btn-outline:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+
+  /* countdown card */
+  .countdown-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(6px);
+    border-radius:6px;
+    padding:26px;
+    color:#fff;
+  }
+  .countdown-card .eyebrow{color:var(--gold-bright);}
+  .countdown-card h3{color:#fff; font-size:22px; margin-top:6px;}
+  .countdown-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:18px;}
+  .countdown-grid div{text-align:center; background:rgba(0,0,0,.2); border-radius:4px; padding:12px 4px;}
+  .countdown-grid .num{font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--gold-bright); display:block;}
+  .countdown-grid .lbl{font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:#cfc3e0;}
+  .countdown-status{margin-top:14px; font-size:15px; color:#e9dfc9;}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+  }
+
+  /* ===== SECTION GENERAL ===== */
+  section{padding:100px 0;}
+  .section-head{max-width:640px; margin-bottom:50px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px);}
+  .divider-flame{width:64px; height:3px; background:linear-gradient(90deg, var(--flame), var(--gold)); margin:16px 0;}
+
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* THEME SECTION */
+  .theme-section{background:var(--purple-deep); color:#efe6d8;}
+  .theme-section h2{color:#fff;}
+  .theme-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+  .theme-card{
+    background:linear-gradient(160deg, rgba(212,175,55,.12), rgba(255,255,255,.03));
+    border:1px solid rgba(212,175,55,.3);
+    padding:36px;
+    border-radius:6px;
+  }
+  .theme-card .verse-ref{font-family:'Playfair Display',serif; font-style:italic; font-size:24px; color:var(--gold-bright); margin-bottom:10px;}
+  .theme-card p{color:#e9dfc9; font-size:19px;}
+  @media(max-width:820px){.theme-grid{grid-template-columns:1fr;}}
+
+  /* SERVICES */
+  .service-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  .service-card{
+    background:#fff; border:1px solid #e8ddc4; border-radius:6px; padding:30px;
+    border-top:4px solid var(--flame);
+    box-shadow:0 10px 30px rgba(59,15,92,.06);
+  }
+  .service-card.gold{border-top-color:var(--gold);}
+  .service-card .time{font-family:'Playfair Display',serif; font-size:26px; color:var(--purple); margin-bottom:6px;}
+  .service-card p{margin:0; color:#5a4a68;}
+
+  /* FELLOWSHIPS */
+  .fellowship-strip{background:var(--cream);}
+  .fship-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .fship-card{
+    background:#fff; padding:28px; border-radius:6px; text-align:left;
+    position:relative; overflow:hidden;
+    box-shadow:0 10px 30px rgba(59,15,92,.06);
+  }
+  .fship-card::before{
+    content:''; position:absolute; top:0; left:0; width:6px; height:100%;
+    background:var(--purple);
+  }
+  .fship-card h3{font-size:24px; margin-bottom:2px;}
+  .fship-card .day{color:var(--flame); font-weight:600; text-transform:uppercase; letter-spacing:.1em; font-size:14px;}
+  @media(max-width:820px){.fship-grid{grid-template-columns:1fr;} .service-grid{grid-template-columns:1fr;}}
+
+  /* SERMONS */
+  .sermons{background:#fff;}
+  .sermon-item{
+    border:1px solid #e8ddc4; border-radius:6px; margin-bottom:18px; overflow:hidden;
+    background:var(--cream);
+  }
+  .sermon-toggle{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:24px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px;
+    font-family:'Playfair Display',serif; font-size:21px; color:var(--purple-deep); font-weight:600;
+  }
+  .sermon-toggle .plus{
+    flex-shrink:0; width:30px; height:30px; border-radius:50%; border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; font-size:20px; color:var(--flame);
+    transition:transform .3s ease;
+  }
+  .sermon-item.open .plus{transform:rotate(45deg);}
+  .sermon-body{
+    max-height:0; overflow:hidden; transition:max-height .4s ease;
+    padding:0 28px;
+  }
+  .sermon-item.open .sermon-body{padding:0 28px 28px;}
+  .sermon-body h4{color:var(--flame); font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:.08em; font-size:15px; margin:18px 0 6px;}
+  .sermon-body p{margin:0 0 10px; color:#3a2a4a;}
+  .sermon-body .verse{
+    background:rgba(212,175,55,.12); border-left:3px solid var(--gold); padding:12px 16px; margin:12px 0;
+    font-style:italic; color:#4a3a58;
+  }
+  .sermon-body ul{margin:8px 0 14px; padding-left:22px;}
+  .sermon-body li{margin-bottom:6px;}
+
+  /* GIVING */
+  .giving{background:var(--purple-deep); color:#efe6d8;}
+  .giving h2{color:#fff;}
+  .giving-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:640px;}
+  .giving-card{
+    background:linear-gradient(160deg, rgba(212,175,55,.14), rgba(255,255,255,.03));
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:6px; padding:26px; text-align:center;
+    cursor:pointer; position:relative;
+  }
+  .giving-card .lbl{
+    text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--gold-bright); font-weight:600;
+  }
+  .giving-card .val{
+    font-family:'Playfair Display',serif; font-size:30px; color:#fff; font-weight:700; margin-top:8px; letter-spacing:.03em;
+  }
+  .giving-card .copy-hint{font-size:13px; color:#cfc3e0; margin-top:8px;}
+  .giving-card .copied{color:var(--gold-bright); font-weight:600;}
+  .giving-note{max-width:640px; color:#cfc3e0; margin-top:22px; font-size:16px;}
+  @media(max-width:560px){.giving-grid{grid-template-columns:1fr;}}
+
+  /* CONTACT */
+  .contact-section{background:linear-gradient(160deg, var(--purple-deep), var(--purple));}
+  .contact-grid{display:grid; grid-template-columns:1fr; gap:40px; max-width:640px; margin:0 auto;}
+  .contact-info{color:#e9dfc9;}
+  .contact-info h2{color:#fff;}
+  .contact-info .row{display:flex; gap:14px; align-items:flex-start; margin-bottom:20px;}
+  .contact-info .row .ic{
+    width:38px; height:38px; border-radius:50%; background:rgba(212,175,55,.15); border:1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold-bright); font-size:16px;
+  }
+  form{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.15); padding:32px; border-radius:6px;}
+  form label{display:block; color:#e9dfc9; font-size:14px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px;}
+  form input, form textarea{
+    width:100%; padding:12px 14px; margin-bottom:6px; border-radius:4px; border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:16px;
+  }
+  form input::placeholder, form textarea::placeholder{color:rgba(255,255,255,.4);}
+  form .field{margin-bottom:16px;}
+  .err{color:#ffb4a3; font-size:13px; min-height:18px; display:block;}
+  .form-status{margin-top:10px; font-size:15px;}
+  .form-status.success{color:#a8e6a1;}
+  .form-status.error{color:#ffb4a3;}
+
+  footer{background:var(--purple-deep); color:#cfc3e0; padding:40px 0; text-align:center; font-size:15px;}
+  footer .gname{font-family:'Playfair Display',serif; color:#fff; font-size:20px; margin-bottom:6px;}
+
+  .back-to-top{
+    position:fixed; bottom:28px; right:28px; width:48px; height:48px; border-radius:50%;
+    background:var(--flame); color:#fff; border:none; cursor:pointer; font-size:20px;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,.3);
+    opacity:0; pointer-events:none; transition:opacity .3s ease, transform .2s ease;
+    z-index:900;
+  }
+  .back-to-top.show{opacity:1; pointer-events:auto;}
+  .back-to-top:hover{transform:translateY(-3px);}
+
+  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <div class="brand">
+      <span class="mark"></span>
+      <span class="name">Grace Center<small>PEFA Church</small></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#theme">Our Theme</a></li>
+      <li><a href="#service">Service Times</a></li>
+      <li><a href="#fellowship">Fellowships</a></li>
+      <li><a href="#sermons">Messages</a></li>
+      <li><a href="#giving">Giving</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#theme">Our Theme</a>
+  <a href="#service">Service Times</a>
+  <a href="#fellowship">Fellowships</a>
+  <a href="#sermons">Messages</a>
+  <a href="#giving">Giving</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="flame-glow"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Ex-Margaret · Rongai · Nakuru, Kenya</div>
+      <h1>Walking in the <em>Anointing</em></h1>
+      <div class="verse-block">
+        <strong>"Not by might, nor by power, but by my Spirit, saith the Lord of hosts."</strong><br>
+        Zechariah 4:6 — our theme for the year.
+      </div>
+      <div class="hero-ctas">
+        <a href="#service" class="btn btn-gold">Join Us Sunday</a>
+        <a href="#sermons" class="btn btn-outline">Read the Word</a>
+      </div>
+    </div>
+
+    <div class="countdown-card">
+      <div class="eyebrow">Next Gathering</div>
+      <h3>Sunday Service</h3>
+      <div class="countdown-grid" id="countdown">
+        <div><span class="num" id="cd-d">00</span><span class="lbl">Days</span></div>
+        <div><span class="num" id="cd-h">00</span><span class="lbl">Hrs</span></div>
+        <div><span class="num" id="cd-m">00</span><span class="lbl">Min</span></div>
+        <div><span class="num" id="cd-s">00</span><span class="lbl">Sec</span></div>
+      </div>
+      <div class="countdown-status" id="cd-status">Bible Study 9–10am · Main Service 10am–1pm</div>
+    </div>
+  </div>
+</section>
+
+<section class="theme-section" id="theme">
+  <div class="wrap">
+    <div class="theme-grid reveal">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-bright)">Theme of the Year</div>
+        <h2>Walking in the Anointing</h2>
+        <div class="divider-flame"></div>
+        <p>This year, Grace Center is pursuing a deeper reliance on the Holy Spirit — laying aside human strength and striving, and choosing instead to move by the Spirit of God in every area of life, ministry, and calling.</p>
+      </div>
+      <div class="theme-card">
+        <div class="verse-ref">Zechariah 4:6</div>
+        <p>"Not by might, nor by power, but by my Spirit, saith the Lord of hosts."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Every Sunday</div>
+      <h2>Service Times</h2>
+      <div class="divider-flame"></div>
+      <p>We gather each Sunday from 9am to 1pm. Come early for Bible Study before we move into worship and the Word.</p>
+    </div>
+    <div class="service-grid reveal">
+      <div class="service-card gold">
+        <div class="time">9:00 AM – 10:00 AM</div>
+        <p>Bible Study — digging into the Word together before worship.</p>
+      </div>
+      <div class="service-card">
+        <div class="time">10:00 AM – 1:00 PM</div>
+        <p>Main Service — worship, the Word, and ministry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fellowship-strip" id="fellowship">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Mid-Week</div>
+      <h2>Cell Fellowships</h2>
+      <div class="divider-flame"></div>
+      <p>Beyond Sunday, we gather in smaller fellowships through the week to pray, study, and grow together.</p>
+    </div>
+    <div class="fship-grid reveal">
+      <div class="fship-card">
+        <div class="day">Monday</div>
+        <h3>Immanuel Fellowship</h3>
+        <p>God with us — a mid-week gathering of prayer and the Word.</p>
+      </div>
+      <div class="fship-card">
+        <div class="day">Tuesday</div>
+        <h3>Penuel Fellowship</h3>
+        <p>Face to face with God — seeking His presence together.</p>
+      </div>
+      <div class="fship-card">
+        <div class="day">Thursday</div>
+        <h3>Bethlehem Fellowship</h3>
+        <p>House of bread — feeding on the Word as a family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sermons" id="sermons">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">From the Pulpit</div>
+      <h2>Messages &amp; Teaching</h2>
+      <div class="divider-flame"></div>
+      <p>A few of the messages recently shared at Grace Center. Tap a title to read.</p>
+    </div>
+
+    <div class="reveal">
+      <!-- Sermon 1 -->
+      <div class="sermon-item">
+        <button class="sermon-toggle" aria-expanded="false">
+          Key Spiritual Hindrances That Grieve the Holy Spirit
+          <span class="plus">+</span>
+        </button>
+        <div class="sermon-body">
+          <div class="verse">"And do not bring sorrow to God's Holy Spirit by the way you live. Remember, he has identified you as his own, guaranteeing that you will be saved on the day of redemption." — Ephesians 4:30 (NLT)</div>
+          <p>Eight things that quietly weaken our walk with the Spirit and dull our spiritual sensitivity:</p>
+          <ul>
+            <li><strong>Offence</strong> — harboring hurt closes off the flow of the Spirit.</li>
+            <li><strong>Disobedience</strong> — resisting what God has clearly said.</li>
+            <li><strong>Spiritual negligence</strong> — neglecting prayer, worship, and God's Word dulls spiritual sensitivity.</li>
+            <li><strong>Pride</strong> — shuts out the work of the Holy Spirit. Judgment doesn't come instantly, but pride is always a warning sign.</li>
+            <li><strong>Desire for people's approval</strong> — you cannot be Spirit-led and crave attention at the same time. Anointing rests on those who love the secret place; those who crave public prayer are often not praying in private.</li>
+            <li><strong>Fear</strong> — fear kills obedience.</li>
+            <li><strong>Lust</strong> — destroys purity; Samson and Ahab show how desire can destroy purpose and legacy.</li>
+            <li><strong>Excuses</strong> — like Saul, we can justify disobedience rather than repent of it.</li>
+          </ul>
+          <div class="verse">"God opposes the proud but gives grace to the humble." — James 4:6 (NLT)</div>
+          <div class="verse">"Fearing people is a dangerous trap, but trusting the Lord means safety." — Proverbs 29:25 (NLT)</div>
+          <div class="verse">"You may believe there's nothing wrong with what you are doing, but keep it between yourself and God." — Romans 14:22 (NLT)</div>
+          <h4>Saul's Excuse</h4>
+          <p>When confronted, Saul answered: he saw his men scattering, Samuel had not arrived as promised, and the Philistines were massing for battle — so he felt compelled to offer the sacrifice himself before Samuel came (1 Samuel 13:11–12). Fear and impatience produced disobedience dressed up as necessity.</p>
+        </div>
+      </div>
+
+      <!-- Sermon 2 -->
+      <div class="sermon-item">
+        <button class="sermon-toggle" aria-expanded="false">
+          Kingdom Seekers — Matthew 6:31–33
+          <span class="plus">+</span>
+        </button>
+        <div class="sermon-body">
+          <div class="verse">"Seek the Kingdom of God above all else, and live righteously, and he will give you everything you need." — Matthew 6:33 (NLT)</div>
+          <p>A Kingdom seeker is someone whose priority is seeking godliness, and who engages actively in the spiritual life rather than seeking the approval of people.</p>
+          <h4>Qualities of a Kingdom Seeker</h4>
+          <ul>
+            <li>Right priority — seeks God's Kingdom first, and with purpose.</li>
+            <li>Doesn't look for man's approval; when God's Kingdom becomes your priority, you stop struggling — He takes care of your needs.</li>
+            <li>Hungers for God's presence (Psalm 42:1).</li>
+            <li>Carries a distinct anointing — like David and Joseph, who carried God's favor from the pit and the prison all the way to the palace.</li>
+            <li>Anointing doesn't mean an absence of challenges — it means God's presence carries us through them (Psalm 23:4).</li>
+            <li>When we seek Him, He releases grace and power to us.</li>
+            <li>Kingdom seekers influence their generation (Acts 13:36) — we are blessed so that we can serve others.</li>
+          </ul>
+          <p>Kingdom seekers win souls, advance, and serve others — and they receive Kingdom rewards. When we seek God in our generation, He blesses us for a lifetime.</p>
+          <h4>Divine Favour Brings</h4>
+          <ul>
+            <li>Blessings</li>
+            <li>Wisdom</li>
+            <li>Peace</li>
+            <li>Spiritual authority</li>
+            <li>Eternal reward</li>
+          </ul>
+          <h4>The Response</h4>
+          <p>Make a decision to seek God. Seek His righteousness. Desire His presence. Serve with purpose. Serve His Kingdom.</p>
+        </div>
+      </div>
+
+      <!-- Sermon 3 -->
+      <div class="sermon-item">
+        <button class="sermon-toggle" aria-expanded="false">
+          Greatness Comes by Knowing Your Identity — Matthew 5:16
+          <span class="plus">+</span>
+        </button>
+        <div class="sermon-body">
+          <h4>What Is This Light That Shines?</h4>
+          <p>It is the Word of God that brings transformation — the light that attracts people to God. It is not wealth, fame, or position; it is faithfully serving God and influencing others positively according to His purpose. Every believer is called to greatness, because we are created in the image of God and empowered by the Holy Spirit.</p>
+          <h4>Greatness Comes by Knowing Your Identity</h4>
+          <ul>
+            <li>Greatness is not about becoming famous — it's about becoming everything God created you to be.</li>
+            <li>You are a child of God, created with purpose.</li>
+            <li>Great people know who they are in Christ Jesus.</li>
+            <li>Greatness requires a relationship with God.</li>
+          </ul>
+          <h4>How Do We Build a Relationship With God?</h4>
+          <ul>
+            <li>Prayer, worship, and studying the Word build spiritual strength.</li>
+            <li>Those who walk closely with God receive wisdom and direction.</li>
+          </ul>
+          <h4>Greatness Demands Character</h4>
+          <ul>
+            <li>Integrity</li>
+            <li>Humility</li>
+            <li>Faithfulness</li>
+          </ul>
+          <p>Greatness is found in serving others (Mark 10:43–48). Whoever wants to be great must be a servant — in the family, the church, and the community. Service opens doors to influence and favor.</p>
+          <h4>Greatness Needs Faith and Courage</h4>
+          <p>Great people face obstacles, but they refuse to give up. They trust God even when circumstances seem impossible.</p>
+          <h4>Conclusion</h4>
+          <ul>
+            <li>Know your identity in Christ</li>
+            <li>Walk closely with God</li>
+            <li>Build godly character</li>
+            <li>Serve others</li>
+            <li>Live by faith</li>
+            <li>Leave a legacy</li>
+          </ul>
+          <p>Every believer is called to greatness — because we are made in God's image, for His purpose, empowered by His Spirit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="giving" id="giving">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:var(--gold-bright)">Sow &amp; Support</div>
+      <h2>Online Giving</h2>
+      <div class="divider-flame"></div>
+      <p>You can give via M-Pesa Paybill using the details below. Tap either box to copy it.</p>
+    </div>
+    <div class="giving-grid reveal">
+      <div class="giving-card" data-copy="3031353" tabindex="0" role="button" aria-label="Copy paybill number">
+        <div class="lbl">Paybill No.</div>
+        <div class="val">3031353</div>
+        <div class="copy-hint">Tap to copy</div>
+      </div>
+      <div class="giving-card" data-copy="1006296293" tabindex="0" role="button" aria-label="Copy account number">
+        <div class="lbl">Account No.</div>
+        <div class="val">1006296293</div>
+        <div class="copy-hint">Tap to copy</div>
+      </div>
+    </div>
+    <p class="giving-note">Thank you for sowing into the work of God at Grace Center. If you'd like a receipt or have any questions about giving, reach us via the contact details below.</p>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="eyebrow" style="color:var(--gold-bright)">Get In Touch</div>
+        <h2>Visit Us / Reach Us</h2>
+        <div class="divider-flame"></div>
+        <div class="row">
+          <span class="ic">📍</span>
+          <div>Grace Center PEFA Church<br>Ex-Margaret, Rongai, Nakuru, Kenya</div>
+        </div>
+        <div class="row">
+          <span class="ic">✉️</span>
+          <div><a href="mailto:gracecenterpefachurch@gmail.com">gracecenterpefachurch@gmail.com</a></div>
+        </div>
+        <div class="row">
+          <span class="ic">📞</span>
+          <div>
+            <a href="tel:+254706193559">0704 629 520</a><br>
+            <a href="https://wa.me/254704629520" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="row">
+          <span class="ic">🕊️</span>
+          <div>Sundays 9am–1pm · Bible Study 9–10am · Main Service 10am–1pm</div>
+        </div>
+        <!-- TODO: add Facebook page link once available -->
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name">
+          <span class="err" id="nameErr"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email">
+          <span class="err" id="emailErr"></span>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How may we help you?"></textarea>
+          <span class="err" id="messageErr"></span>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;">Send Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="gname">Grace Center PEFA Church</div>
+    <div>Ex-Margaret, Rongai, Nakuru, Kenya · Walking in the Anointing — Zechariah 4:6</div>
+    <div style="margin-top:10px; opacity:.7;">&copy; <span id="year"></span> Grace Center PEFA Church. All rights reserved.</div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('backToTop').classList.toggle('show', window.scrollY > 500);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }));
+
+  // Back to top
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+
+  // Sermon accordion
+  document.querySelectorAll('.sermon-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.sermon-item');
+      const body = item.querySelector('.sermon-body');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.sermon-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.sermon-body').style.maxHeight = null;
+        i.querySelector('.sermon-toggle').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Countdown to next Sunday 9am (or show "live" during service window)
+  function nextSunday9am(){
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday
+    const target = new Date(now);
+    target.setHours(9,0,0,0);
+    let daysUntil = (7 - day) % 7;
+    if(day === 0){
+      const serviceEnd = new Date(now); serviceEnd.setHours(13,0,0,0);
+      if(now < serviceEnd){
+        // today, service window
+        daysUntil = 0;
+      } else {
+        daysUntil = 7;
+      }
+    }
+    target.setDate(now.getDate() + daysUntil);
+    return target;
+  }
+
+  function updateCountdown(){
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    const statusEl = document.getElementById('cd-status');
+
+    if(day === 0 && hour >= 9 && hour < 13){
+      document.getElementById('cd-d').textContent = '00';
+      document.getElementById('cd-h').textContent = '00';
+      document.getElementById('cd-m').textContent = '00';
+      document.getElementById('cd-s').textContent = '00';
+      statusEl.textContent = "We're live right now — join us!";
+      return;
+    }
+
+    const target = nextSunday9am();
+    const diff = target - now;
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+    statusEl.textContent = "Bible Study 9–10am · Main Service 10am–1pm";
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Giving: tap to copy paybill/account
+  document.querySelectorAll('.giving-card').forEach(card => {
+    const copyValue = card.getAttribute('data-copy');
+    const hint = card.querySelector('.copy-hint');
+    const originalHint = hint.textContent;
+    const doCopy = async () => {
+      try{
+        await navigator.clipboard.writeText(copyValue);
+      } catch(err){
+        const ta = document.createElement('textarea');
+        ta.value = copyValue;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      hint.textContent = 'Copied!';
+      hint.classList.add('copied');
+      setTimeout(() => { hint.textContent = originalHint; hint.classList.remove('copied'); }, 1800);
+    };
+    card.addEventListener('click', doCopy);
+    card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); doCopy(); } });
+  });
+
+  // Contact form validation + Formspree submission
+  const form = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  function setErr(id, msg){
+    document.getElementById(id).textContent = msg;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let valid = true;
+    setErr('nameErr',''); setErr('emailErr',''); setErr('messageErr','');
+    formStatus.textContent = ''; formStatus.className = 'form-status';
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if(!name){ setErr('nameErr','Please enter your name.'); valid = false; }
+    if(!email){ setErr('emailErr','Please enter your email.'); valid = false; }
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ setErr('emailErr','Please enter a valid email.'); valid = false; }
+    if(!message){ setErr('messageErr','Please write a short message.'); valid = false; }
+
+    if(!valid) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try{
+      // Replace YOUR_FORM_ID with your actual Formspree form ID (see https://formspree.io)
+      const res = await fetch('https://formspree.io/f/maqgzqvn', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if(res.ok){
+        formStatus.textContent = 'Thank you — your message has been sent!';
+        formStatus.classList.add('success');
+        form.reset();
+      } else {
+        formStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+        formStatus.classList.add('error');
+      }
+    } catch(err){
+      formStatus.textContent = 'Network error. Please try again or email us directly.';
+      formStatus.classList.add('error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
+
+</body>
+</html>
+
